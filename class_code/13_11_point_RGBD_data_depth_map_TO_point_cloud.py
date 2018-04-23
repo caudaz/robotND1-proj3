@@ -23,8 +23,6 @@ ax = fig.add_subplot(111, projection='3d')
 rows, cols = depth_map.shape
 
 # Send pixels not correctly mapped to the back
-# Use 1.1 to send the poorly mapped pixels back 10 percent 
-# farther than the farthest correctly mapped point
 max_val = depth_map.max() * 1.1
 
 count = 0
@@ -41,14 +39,11 @@ for x in range(cols):
             # Count points done
             count+=1
             
-            # TODO 
             # Get point color for pixel
-            # Format as tuple: (R,G,B)
-            pixel_color = (0,0,0)
+            pixel_color = (image[y,x,0],image[y,x,1],image[y,x,2])
             
-            # TODO
             # Get point depth for each particle
-            depth = 0
+            depth = depth_map[y,x]
             
             # Send points not correctly mapped to the back
             if depth == 0:
