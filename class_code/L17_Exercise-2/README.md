@@ -87,4 +87,4 @@ ON RVIZ switch the PointCloud2 Topic to /pcl_cluster
 ```
 You should see this now:
 
-![](./exercise2-results.jpg)
+![](./exercise2-results.png)
