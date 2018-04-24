@@ -6,7 +6,7 @@ A simple stick robot with an RGB-D camera attached to its head via a pan-tilt jo
 
 Here's a brief summary of how to get setup for the exercise:
 
-1. First of all copy/move the `sensor_stick` package to `/src` directory of your active ros workspace. 
+1. First of all copy/move the `sensor_stick` package to `/src` directory of your active ros workspace.
 
 2. Make sure you have all the dependencies resolved by using the rosdep install tool and run `catkin_make`:  
 
@@ -32,17 +32,59 @@ Now, to build your perception pipeline, you must perform following steps:
 
 2. Create a python ros node that subscribes to `/sensor_stick/point_cloud` topic. Use the `template.py` file found under /sensor_stick/scripts/ to get started.
 
-3. Use your code from Exercise-1 to apply various filters and segment the table using RANSAC. 
+3. Use your code from Exercise-1 to apply various filters and segment the table using RANSAC.
 
-4. Create publishers and topics to publish the segmented table and tabletop objects as separate point clouds 
+4. Create publishers and topics to publish the segmented table and tabletop objects as separate point clouds
 
 5. Apply Euclidean clustering on the table-top objects (after table segmentation is successful)
 
 6. Create a XYZRGB point cloud such that each cluster obtained from the previous step has its own unique color.
 
-7. Finally publish your colored cluster cloud on a separate topic 
+7. Finally publish your colored cluster cloud on a separate topic
 ![clusters](https://user-images.githubusercontent.com/9555001/27804180-604d6e04-5fe2-11e7-9f33-d8d8da9a8bc0.png)
 
-You will find `pcl_helper.py` file under `/sensor_stick/scripts`. This file contains various functions to help you build up your perception pipeline. 
+You will find `pcl_helper.py` file under `/sensor_stick/scripts`. This file contains various functions to help you build up your perception pipeline.
 
 Refer to the main README file for documentation on `python-pcl` and `pcl_helper.py` modules
+
+
+
+# INSTRUCTIONS
+```
+gazebo --version
+sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
+wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install gazebo7
+gazebo –version
+
+################ TERMINAL 1 ################
+
+mkdir -p ~/catkin_ws/src
+cd ~/catkin_ws/
+catkin_make
+cd ~/catkin_ws/src
+
+COPY the sensor_stick folder inside src
+
+chmod -R 755 *
+
+cd ~/catkin_ws
+rosdep install --from-paths src --ignore-src --rosdistro=kinetic -y
+catkin_make
+
+export GAZEBO_MODEL_PATH=~/catkin_ws/src/sensor_stick/models
+source ~/catkin_ws/devel/setup.bash
+
+roslaunch sensor_stick robot_spawn.launch
+
+################# TERMINAL 2 #######################
+
+cd ~/catkin_ws/src/sensor_stick/scripts/
+./segmentation.py
+
+ON RVIZ switch the PointCloud2 Topic to /pcl_cluster
+```
+You should see this now:
+
+![](./exercise2-results.jpg)

@@ -5,12 +5,14 @@ sudo apt-get update
 sudo apt-get install gazebo7
 gazebo –version
 
+################ TERMINAL 1 ################
+
 mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/
 catkin_make
 cd ~/catkin_ws/src
 
--copy the sensor_stick folder inside src
+COPY the sensor_stick folder inside src
 
 chmod -R 755 *
 
@@ -23,5 +25,10 @@ source ~/catkin_ws/devel/setup.bash
 
 roslaunch sensor_stick robot_spawn.launch
 
+################# TERMINAL 2 #######################
 
+cd ~/catkin_ws/src/sensor_stick/scripts/
+./segmentation.py
+
+ON RVIZ switch the PointCloud2 Topic to /pcl_cluster
 
