@@ -15,8 +15,14 @@ In brief, the steps to complete this exercise are the following:
 3. Perform RANSAC plane fitting to identify the table.
 4. Use the ExtractIndices Filter to create new point clouds containing the table and objects separately.
 
-### To view a .pcd file:
+# INSTRUCTIONS
+```
+$python RANSAC.py
 
+$pcl_viewer *.pcd
 ```
-$ pcl_viewer filename.pcd 
-```
+
+You should now see:
+![](./output.png)
+
+
