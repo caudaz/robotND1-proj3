@@ -68,3 +68,20 @@ Return: rgb packed as a single float32
 Creates a list of 3-tuple (rgb) with length of the list = cluster_count
 Return: get_color_list.color_list
 ```
+
+
+# INSTRUCTIONS
+```
+$ python RANSAC.py
+
+$ pcl_viewer tabletop.pcd
+$ pcl_viewer tabletop_vgf_ptf.pcd
+$ pcl_viewer tabletop_vgf_ptf_extracted_inliers.pcd
+$ pcl_viewer tabletop_vgf_ptf_extracted_outliers.pcd
+$ pcl_viewer tabletop_vgf_ptf_outlierfilter.pcd
+```
+
+You should see the filtered point clouds:
+![](./output.png)
+
+
