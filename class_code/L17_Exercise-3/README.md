@@ -72,9 +72,9 @@ The new code you need to add is listed under the Exercise-3 TODO's in the `pcl_c
 
 terminal1
 =========
-```
-copy/paste sensor_stick folder => ~/catkin_ws/src/
 
+copy/paste sensor_stick folder => ~/catkin_ws/src/
+```
 cd ~/catkin_ws
 rosdep install --from-paths src --ignore-src --rosdistro=kinetic -y
 catkin_make
