@@ -123,7 +123,10 @@ train_svm.py
 -trains the model using SVM and plots confusion matrix
 
 
+improve classification
+======================
 The confusion matrix has low accuracy. This is because compute_color_histograms function, inside ~/catkin_ws/src/sensor_stick/src/sensor_stick/features.py, does not have implemented:
+
     # TODO: Compute histograms
 
     # TODO: Concatenate and normalize the histograms
