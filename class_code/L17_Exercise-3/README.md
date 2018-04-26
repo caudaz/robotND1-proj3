@@ -130,7 +130,11 @@ The confusion matrix has low accuracy. This is because compute_color_histograms 
     # TODO: Concatenate and normalize the histograms
 
 -Compute features for a larger set of random orientations of these objects. Increase the range(5) to a higher value to capture more angles.
+
 -Convert RGB data to HSV  using_hsv=True
+
 -Try different binning schemes with the histograms
+
 -Modify the SVM parameters (kernel, regularization etc.)
+
 
