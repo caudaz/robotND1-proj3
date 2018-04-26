@@ -1,6 +1,6 @@
 terminal1
 =========
-copy paste sensor_stick folder inside ~/catkin_ws/src directory
+copy/paste sensor_stick folder => ~/catkin_ws/src/
 
 cd ~/catkin_ws
 rosdep install --from-paths src --ignore-src --rosdistro=kinetic -y
