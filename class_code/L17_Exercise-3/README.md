@@ -95,7 +95,8 @@ source ~/catkin_ws/devel/setup.bash
 rosrun sensor_stick capture_features.py
 ```
 NOTE:
--The features will now be captured and you can watch the objects being spawned in Gazebo. It should take 5-10 sec. for each random orientations (depending on your machine's resources) so with 7 objects total it takes awhile to complete.
+-Features are captured while spawned in Gazebo. 
+-It should take 5-10 sec. for each random orientations for each object.
 -When it finishes running you should have a training_set.sav file.
 ```
 sudo pip install sklearn scipy
@@ -105,6 +106,14 @@ rosrun sensor_stick train_svm.py
 capture_feature.py
 ==================
 -generates point cloud data at different angles for each object
+```
+chists = compute_color_histograms(sample_cloud, using_hsv=False)
+normals = get_normals(sample_cloud)
+nhists = compute_normal_histograms(normals)
+labeled_features.append([feature, model_name])
+
+pickle.dump(labeled_features, open('training_set.sav', 'wb'))
+```
 -to improve:
 	-increase the range(5) to a higher value to capture more angles
 	-use HSV color space by setting using_hsv=True
