@@ -58,8 +58,9 @@ def pcl_callback(pcl_msg):
                                             white_cloud[indice][1],
                                             white_cloud[indice][2],
                                             rgb_to_float(cluster_color[j])])
-    #Create new cloud containing all clusters, each with unique color
+    # new color pcl instance
     cluster_cloud = pcl.PointCloud_PointXYZRGB()
+    # populate color plc with x,y,z,rgb list
     cluster_cloud.from_list(color_cluster_point_list)
 
     # TODO: Convert PCL data to ROS messages
