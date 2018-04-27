@@ -7,4 +7,7 @@
 
 [Exercise #3](class_code/L17-Exercise-3/README.md)
 
-[3D Perception Project](https://goo)
+[3D Perception Project](https://google.com)
+
+
+class_code/L17_Exercise-3/README.md
