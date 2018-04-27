@@ -188,4 +188,4 @@ $ chmod +x object_recognition.py
 $ ./object_recognition.py
 
 After running object_recognition, the output in RVIZ is:
-![](./improved_confusion_matrix.png)
+![](./object_recognition_output.png)
