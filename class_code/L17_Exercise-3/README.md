@@ -138,3 +138,17 @@ The confusion matrix has low accuracy. This is because compute_color_histograms 
 -Modify the SVM parameters (kernel, regularization etc.)
 
 
+
+After using HSV and color/normal histograms, the confusion matrix is:
+![](./improved_confusion_matrix.png)
+
+
+
+Files used in this lesson
+=========================
+
+src/sensor_stick/scripts/capture_features.py
+
+src/sensor_stick/scripts/train_svm.py
+
+src/sensor_stick/src/sensor_stick/features.py
