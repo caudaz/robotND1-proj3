@@ -70,6 +70,14 @@ The new code you need to add is listed under the Exercise-3 TODO's in the `pcl_c
 
 ## INSTRUCTIONS
 
+
+~/catkin/src/sensor_stick/scripts/capture_features.py
+
+~/catkin/src/sensor_stick/scripts/train_svm.py
+
+~/catkin/src/sensor_stick/src/sensor_stick/features.py
+
+
 terminal1
 =========
 
@@ -144,11 +152,40 @@ After using HSV and color/normal histograms, the confusion matrix is:
 
 
 
-Files used in this lesson
-=========================
+OBJECT RECOGNITION
+==================
 
-src/sensor_stick/scripts/capture_features.py
+~/catkin/src/sensor_stick/scripts/object_recognition.py
 
-src/sensor_stick/scripts/train_svm.py
+copy of the sensor_stick/scripts/template.py => object_recognition.py. 
+copy and paste your code in there from the previous exercises:
+- Exercise-2 TODOs
+- Exercise-3 TODOs (NEW):
+- TODO: complete this step just as is covered in capture_features.py
+- TODO: Extract histogram features just as is covered in capture_features.py
+- if __name__ == '__main__':
+- TODO: ROS node initialization
+- TODO: Create Subscribers
+- TODO: Create Publishers
+- TODO: Load Model From disk
+- TODO: Spin while node is not shutdown
 
-src/sensor_stick/src/sensor_stick/features.py
+
+## INSTRUCTIONS
+
+terminal1
+=========
+
+```
+$ roslaunch sensor_stick robot_spawn.launch
+```
+
+terminal2
+=========
+copy model.sav to ~/catkin_ws/src/sensor_stick/scripts/
+```
+$ chmod +x object_recognition.py
+$ ./object_recognition.py
+
+After running object_recognition, the output in RVIZ is:
+![](./improved_confusion_matrix.png)
