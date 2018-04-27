@@ -189,3 +189,5 @@ $ ./object_recognition.py
 
 After running object_recognition, the output in RVIZ is:
 ![](./object_recognition_output.png)
+
+
