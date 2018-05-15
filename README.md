@@ -11,5 +11,5 @@
 [Exercise #3](class_code/L17_Exercise-3/README.md)
 
 
-[3D Perception Project](https://google.com)
+[3D Perception Project](https://github.com/caudaz/RoboND-Perception-Project)
 
